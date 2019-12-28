@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Danh sách học viên</title>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="heading">
+			<div class="heading__text text-center">Danh sách học viên</div>
+			<div class="heading__btn">
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#addModal" data-whatever="@mdo"><i class="fas fa-user-plus"></i> Thêm</button>
+
+			</div>
+		</div>
+		<div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><input type="checkbox"></th>
+						<th scope="col">TÊN</th>
+						<th scope="col">NGÀY SINH</th>
+						<th scope="col">EMAIL</th>
+						<th scope="col">SỐ ĐIỆN THOẠI</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="checkbox"></td>
+						<td>Thiện</td>
+						<td>13/08/1994</td>
+						<td>khuatducthien.94@gmail.com</td>
+						<td>0973863894</td>
+						<td>
+							<button type="button" class="btn p-0 btn-outline-light" data-toggle="modal" data-target="#editModal" data-whatever="@mdo" title="Sửa"><i class="far fa-edit text-info"></i></button>
+							<button type="button" class="btn btn-outline-light p-0" data-toggle="modal" data-target="#deleteModal" title="Xóa">
+								<i class="far fa-trash-alt text-danger"></i></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Add modal -->
+		<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">THÔNG TIN HỌC VIÊN</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="add-name" class="col-form-label">Tên:</label>
+								<input type="text" class="form-control" id="add-name">
+							</div>
+							<div class="form-group">
+								<label for="add-birthday" class="col-form-label">Ngày sinh:</label>
+								<input type="date" class="form-control" id="add-birthday">
+							</div>
+							<div class="form-group">
+								<label for="add-email" class="col-form-label">Email:</label>
+								<input type="text" class="form-control" id="add-email">
+							</div>
+							<div class="form-group">
+								<label for="add-phone" class="col-form-label">Số điện thoại:</label>
+								<input type="text" class="form-control" id="add-phone">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+						<button type="button" class="btn btn-success">Xác nhận</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Add modal -->
+
+		<!-- Edit modal -->
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">CHỈNH SỬA THÔNG TIN HỌC VIÊN</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="edit-name" class="col-form-label">Tên:</label>
+								<input type="text" class="form-control" id="edit-name">
+							</div>
+							<div class="form-group">
+								<label for="edit-birthday" class="col-form-label">Ngày sinh:</label>
+								<input type="date" class="form-control" id="edit-birthday">
+							</div>
+							<div class="form-group">
+								<label for="edit-email" class="col-form-label">Email:</label>
+								<input type="text" class="form-control" id="edit-email">
+							</div>
+							<div class="form-group">
+								<label for="edit-phone" class="col-form-label">Số điện thoại:</label>
+								<input type="text" class="form-control" id="edit-phone">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+						<button type="button" class="btn btn-info">Lưu lại</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Edit modal -->
+
+		<!-- Delete modal -->
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">XÓA HỌC VIÊN</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Bạn có chắc chắn muốn xóa ?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+						<button type="button" class="btn btn-danger">Xác nhận</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Delete modal -->
+
+	</div>
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/2c1eea7cec.js" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+	</html>
